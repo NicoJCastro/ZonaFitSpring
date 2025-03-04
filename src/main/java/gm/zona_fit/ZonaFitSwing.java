@@ -1,5 +1,6 @@
 package gm.zona_fit;
 
+import com.formdev.flatlaf.FlatDarculaLaf;
 import gm.zona_fit.gui.ZonaFitForma;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.slf4j.Logger;
@@ -19,9 +20,12 @@ public class ZonaFitSwing {
 
     public static void main(String[] args) {
         loadEnvironmentVariables();
-
         System.setProperty("java.awt.headless", "false");
 
+        //Configuración el modo oscuro
+        FlatDarculaLaf.setup();
+
+        //Instaciar la fabrica de spring
         logger.info("***Inicio de la aplicación***");
         ConfigurableApplicationContext contextoSpring =
                 new SpringApplicationBuilder(ZonaFitSwing.class)
