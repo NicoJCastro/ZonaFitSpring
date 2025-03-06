@@ -34,6 +34,7 @@ public class ZonaFitSwing {
                         .run(args);
         logger.info("***Fin de la aplicación***");
 
+        //Crear un objeto de Swing
         SwingUtilities.invokeLater(() -> {
             ZonaFitForma zonaFitForma = contextoSpring.getBean(ZonaFitForma.class);
             zonaFitForma.setVisible(true);
